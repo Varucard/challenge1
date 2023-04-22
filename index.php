@@ -38,13 +38,70 @@
     <!-- Cierre Navbar -->
 
     <!-- Comienzo Main -->
-    <main>
+    <main> 
 
         <h1>Hola Mundo</h1>
 
     </main>
     <!-- Cierre Main -->
     
+        <!-- Sección La Empresa -->
+        <section>
+
+            <h1>Hola Empresa</h1>
+
+        </section>
+        <!-- Cierr Sección La Empresa -->
+
+        <!-- Sección materiales -->
+        <section>
+
+            <h1>Hola Materiales</h1>
+
+        </section>
+        <!-- Cierr Sección materiales -->
+
+        <!-- Seccion Formulario de contacto -->
+        <section>
+            <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+                <h2 class="w3-wide w3-center">CONTACTO</h2>
+                <p class="w3-opacity w3-center"><i>Necesitas construir?</i></p>
+                <div class="w3-row w3-padding-32">
+                <div class="w3-col m6 w3-large w3-margin-bottom">
+                    <i class="fa fa-map-marker" style="width:30px"></i> Dirección: calle 123<br>
+                    <i class="fa fa-phone" style="width:30px"></i> Telefono: 000000000000<br>
+                    <i class="fa fa-envelope" style="width:30px"> </i> Email: algo@algo.com<br>
+                </div>
+                <div class="w3-col m6">
+                    <form action="/send_email.php" target="_blank">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
+                        </div>
+                        <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Email" required name="email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="mensaje">
+                    <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </section>
+        <!-- Cierre Seccion Formulario de contacto -->
+
+    </main>
+    <!-- Cierre Main -->
+
+    <!-- Inicio de Footer -->
+    <footer>
+
+    <h1>Hola Footer!</h1>
+
+    </footer>
+    <!-- Cierre de Footer -->
+
     <!-- Permite la utilización de Iconos dentro de la pagina -->
     <script src="js/icons.js" crossorigin="anonymous"></script>
 

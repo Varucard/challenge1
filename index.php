@@ -38,8 +38,13 @@
     <!-- Cierre Navbar -->
 
     <!-- Comienzo Main -->
-    <main>
+    <main> 
 
+        <h1>Hola Mundo</h1>
+
+    </main>
+    <!-- Cierre Main -->
+    
         <!-- Sección La Empresa -->
         <section>
 

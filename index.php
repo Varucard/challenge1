@@ -191,24 +191,26 @@
   </main>
   <!-- Cierre Main -->
 
-    <!-- Api De Google De Direccion -->
+  <!-- Inicio de Footer -->
+  <footer>
+
+    <!-- Api De Google Maps -->
     <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3280.563442324534!2d-58.688272!3d-34.690966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc0f68e54f331%3A0x55e386da627f68b0!2sZapiola%201420%2C%20Libertad%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1682287516991!5m2!1ses!2sar"
-        width="1920" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3280.563442324534!2d-58.688272!3d-34.690966!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc0f68e54f331%3A0x55e386da627f68b0!2sZapiola%201420%2C%20Libertad%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1682287516991!5m2!1ses!2sar"
+      width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Cierre Api de Google Maps -->
 
-    <!-- Inicio de Footer -->
+    <!-- Inicio sección inferior footer -->
+    <div class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <p class="w3-medium">LibConstruct</p>
+    </div>
     
-
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <p class="w3-medium">LibConstruct</p>
-    </footer>
-
-
-    <!-- Cierre de Footer -->
+  </footer>
+  <!-- Cierre de Footer -->
     
   <!-- JavaScript -->
   <!-- Permite la utilización de Iconos dentro de la pagina -->

@@ -49,4 +49,3 @@ Es necesario que la viste de Home contenga un Carrusel que contenga 3 fotos de m
 
     - Desarrollador Beck-end: Pablo Jara
     - Desarrollador Front-end: Marcela Ibarra
-

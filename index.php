@@ -25,7 +25,7 @@
             <a href="#tour" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">MATERIALES</a>
             <a href="#contact" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
             <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-hover-orange w3-padding-large w3-button" title="More">MAS<i class="fa fa-caret-down"></i></button>     
+                <button class="w3-hover-orange w3-padding-large w3-button" title="More">MAS<i style="padding-left: 5px;" class="fa fa-caret-down"></i></button>     
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                 <a href="#" class="w3-hover-orange w3-bar-item w3-button">Mercaderia</a>
                 <a href="#" class="w3-hover-orange w3-bar-item w3-button">Extras</a>
@@ -161,6 +161,56 @@
                         </div>
                         <div class="w3-half">
                         <input class="w3-input w3-border" type="text" placeholder="Email" required name="email">
+            </section>
+            <!-- Cierre Carrousel/ Imagenes del mismo-->
+    
+            <!-- Sección La Empresa -->
+            <section>
+
+                <h1>Hola Empresa</h1>
+
+            </section>
+            <!-- Cierr Sección La Empresa -->
+
+            <!-- Sección materiales -->
+            <section>
+
+                <h1>Hola Materiales</h1>
+
+            </section>
+            <!-- Cierr Sección materiales -->
+
+            <!-- Seccion Formulario de contacto -->
+            <section>
+                <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+                    <h2 class="w3-wide w3-center">CONTACTO</h2>
+                    <p class="w3-opacity w3-center"><i>Necesitas construir?</i></p>
+                    <p class="w3-opacity w3-center"><i>Contactanos</i></p>
+                    <div class="w3-row w3-padding-32">
+                    <div class="w3-col m6 w3-large w3-margin-bottom">
+                        <i class="fa fa-map-marker" style="width:30px"></i> Dirección: Calle Zapiola 1420, Libertad Merlo.<br>
+                        <i style="padding-top: 15px;" class="fa fa-phone" style="width:30px"></i> Telefono fijo:(0220)-4978867<br>
+                        <i class="fa-sharp fa-solid fa-mobile" style="width:30px"></i> Celular: (011) 76888890<br>
+                        <i class="fa fa-envelope" style="width:30px"> </i> Email: lib_construct@gmail.com<br>
+                    </div>
+                    <div class="w3-col m6">
+                        <form action="/send_email.php" target="_blank">
+                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                            <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
+                            </div>
+                            <div class="w3-half">
+                                <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
+                                <option value="persona">Persona</option>
+                                <option value="empresa">Empresa</option>
+                                </select>
+                            </div>
+                            <div class="w3-half">
+                            <input class="w3-input w3-border" type="tel" placeholder="Telefono" required name="telefono">
+                            </div>
+                            <div class="w3-half">
+                            <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
+                            </div>
                         </div>
                     </div>
                     <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="mensaje">

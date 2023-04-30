@@ -20,7 +20,14 @@
   <!-- Inicio Navbar -->
   <nav>
       <div class="w3-top">
-          <div class="w3-bar w3-black w3-card">
+
+      
+        <div class="w3-bar w3-black w3-card">
+          
+          <!-- Logo del Cliente -->
+          <a class="w3-bar-item" href=""><img src="img/logo_fondo.png" alt="Logo de LibCostruct"  width="150px" height="100px"></a>
+      
+
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
           <a href="#" class="w3-hover-orange w3-bar-item w3-button w3-padding-large">CASA</a>
           <a href="#band" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONSTRUCTORA</a>
@@ -34,8 +41,7 @@
               </div>
           </div>
 
-          <!-- Logo del Cliente -->
-          <a href=""><img src="img/logo_fondo.png" alt="Logo de LibCostruct" style="margin-left:40px" width="250px" height="200px"></a>
+          
 
           <a href="javascript:void(0)" class="w3-padding-large w3-hover-orange w3-hide-small w3-right"><i class="fa fa-search"></i></a>
           </div>
@@ -158,26 +164,26 @@
               <i class="fa fa-envelope" style="width:30px"> </i> Email: lib_construct@gmail.com<br>
             </div>
             <div class="w3-col m6">
-              <form action="/send_email.php" target="_blank">
-              <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                <div class="w3-half">
-                  <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
+              <form action="./php/back_libConstruct.php" method="POST">
+                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                  <div class="w3-half">
+                    <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
+                  </div>
+                  <div class="w3-half">
+                    <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
+                    <option value="persona">Persona</option>
+                    <option value="empresa">Empresa</option>
+                    </select>
+                  </div>
+                  <div class="w3-half">
+                    <input class="w3-input w3-border" type="tel" placeholder="Telefono" required name="telefono">
+                  </div>
+                  <div class="w3-half">
+                    <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
+                  </div>
                 </div>
-                <div class="w3-half">
-                  <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
-                  <option value="persona">Persona</option>
-                  <option value="empresa">Empresa</option>
-                  </select>
-                </div>
-                <div class="w3-half">
-                  <input class="w3-input w3-border" type="tel" placeholder="Telefono" required name="telefono">
-                </div>
-                <div class="w3-half">
-                  <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
-                </div>
-              </div>
-              <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="mensaje">
-              <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
+                <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="mensaje">
+                <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
               </form>
             </div>
           </div>

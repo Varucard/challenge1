@@ -1,26 +1,26 @@
 <?php
 
-//Import PHPMailer classes into the global namespace
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+  //Import PHPMailer classes into the global namespace
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\SMTP;
 
-require 'vendor/autoload.php';
+  require 'vendor/autoload.php';
 
-/**
- * Funcion encargada de enviar un Email
- * 
- * Params
- * @param string[] $contacto Contiene datos del contacto
- * @param string $email Contiene la direccion de correo de donde se envia el Email
- * @param string $clave Contiene el codigo unico de aplicacion
- * @param string $mensaje Contiene codigo HTML para el cuerpo del Email
- * @param string $asuntoMail Contiene el asunto del Email
- * @param string $adjunto Se pueden enviar adjuntos en el mensaje - Este parametro es opcional y su valor por defecto es ''
- * 
- * @return boolean Devuelve true si el envio fue exitoso, de lo contrario devuelve un false
- */
-function enviarMail($contacto, $email, $clave, $mensaje, $asuntoMail, $adjunto = '')
-{
+  /**
+   * Funcion encargada de enviar un Email
+   * 
+   * Params
+   * @param string[] $contacto Contiene datos del contacto
+   * @param string $email Contiene la direccion de correo de donde se envia el Email
+   * @param string $clave Contiene el codigo unico de aplicacion
+   * @param string $mensaje Contiene codigo HTML para el cuerpo del Email
+   * @param string $asuntoMail Contiene el asunto del Email
+   * @param string $adjunto Se pueden enviar adjuntos en el mensaje - Este parametro es opcional y su valor por defecto es ''
+   * 
+   * @return boolean Devuelve true si el envio fue exitoso, de lo contrario devuelve un false
+   */
+  function enviarMail($contacto, $email, $clave, $mensaje, $asuntoMail, $adjunto = '')
+  {
     //Create a new PHPMailer instance
     $mail = new PHPMailer();
 
@@ -31,7 +31,7 @@ function enviarMail($contacto, $email, $clave, $mensaje, $asuntoMail, $adjunto =
     //SMTP::DEBUG_OFF = off (for production use)
     //SMTP::DEBUG_CLIENT = client messages
     //SMTP::DEBUG_SERVER = client and server messages
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
     //Set the hostname of the mail server
     $mail->Host = 'smtp.gmail.com';
@@ -87,4 +87,6 @@ function enviarMail($contacto, $email, $clave, $mensaje, $asuntoMail, $adjunto =
         //echo 'Message sent!';
         return true;
     }
-}
+  }
+
+?>

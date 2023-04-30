@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Verificar si hay un mensaje en la sesión
+if (isset($_SESSION['mensaje'])) {
+  $mensaje = $_SESSION['mensaje'];
+  unset($_SESSION['mensaje']); // Eliminar el mensaje de la sesión
+} else {
+  $mensaje = '';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,17 +29,21 @@
 
 <body>
 
+  <?php if (!empty($mensaje)): ?>
+    <script>
+      alert("<?php echo $mensaje; ?>");
+    </script>
+  <?php endif; ?>
+
   <!-- Inicio Navbar -->
   <nav>
       <div class="w3-top">
 
-      
         <div class="w3-bar w3-black w3-card">
           
           <!-- Logo del Cliente -->
           <a class="w3-bar-item" href=""><img src="img/logo_fondo.png" alt="Logo de LibCostruct"  width="150px" height="100px"></a>
       
-
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
           <a href="#" class="w3-hover-orange w3-bar-item w3-button w3-padding-large">CASA</a>
           <a href="#band" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONSTRUCTORA</a>
@@ -40,8 +56,6 @@
               <a href="#" class="w3-hover-orange w3-bar-item w3-button">Extras</a>
               </div>
           </div>
-
-          
 
           <a href="javascript:void(0)" class="w3-padding-large w3-hover-orange w3-hide-small w3-right"><i class="fa fa-search"></i></a>
           </div>
@@ -159,7 +173,7 @@
           <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
               <i class="fa fa-map-marker" style="width:30px"></i> Dirección: Calle Zapiola 1420, Libertad Merlo.<br>
-              <i style="padding-top: 15px;" class="fa fa-phone" style="width:30px"></i> Telefono fijo:(0220)-4978867<br>
+              <i style="padding-top: 15px; width:30px" class="fa fa-phone"></i> Telefono fijo:(0220)-4978867<br>
               <i class="fa-sharp fa-solid fa-mobile" style="width:30px"></i> Celular: (011) 76888890<br>
               <i class="fa fa-envelope" style="width:30px"> </i> Email: lib_construct@gmail.com<br>
             </div>
@@ -171,8 +185,8 @@
                   </div>
                   <div class="w3-half">
                     <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
-                    <option value="persona">Persona</option>
-                    <option value="empresa">Empresa</option>
+                    <option value="PERSONA">Persona</option>
+                    <option value="EMPRESA">Empresa</option>
                     </select>
                   </div>
                   <div class="w3-half">

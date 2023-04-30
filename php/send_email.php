@@ -1,79 +1,92 @@
 <?php
 
-require_once './phpMail/enviarMail.php';
-require_once './phpMail/functiones.php';
+  //Import PHPMailer classes into the global namespace
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\SMTP;
 
-/*--------- Variables ------------*/
+  require 'vendor/autoload.php';
 
-// Extrare las variables del .env
-$contacto = [
-  'nombre' => strtoupper(checkInputText('nombre', '/^[a-z\' ]+$/ui')),
-  'consultor' => strtoupper(checkInputText('consultor', '/^[a-z\' ]+$/ui')),
-  'numero' => intval(checkInputText('numero', '/^([0-9])*$/')),
-  'email' => checkInputEmail('email'),
-  'mensaje' => checkInputDate('mensaje'),
-];
+  /**
+   * Funcion encargada de enviar un Email
+   * 
+   * Params
+   * @param string[] $contacto Contiene datos del contacto
+   * @param string $email Contiene la direccion de correo de donde se envia el Email
+   * @param string $clave Contiene el codigo unico de aplicacion
+   * @param string $mensaje Contiene codigo HTML para el cuerpo del Email
+   * @param string $asuntoMail Contiene el asunto del Email
+   * @param string $adjunto Se pueden enviar adjuntos en el mensaje - Este parametro es opcional y su valor por defecto es ''
+   * 
+   * @return boolean Devuelve true si el envio fue exitoso, de lo contrario devuelve un false
+   */
+  function enviarMail($contacto, $email, $clave, $mensaje, $asuntoMail, $adjunto = '')
+  {
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer();
 
-$contenido = '
-<html>
-    <head>
+    //Tell PHPMailer to use SMTP
+    $mail->isSMTP();
 
-        <meta charset="UTF-8">
-        <title></title>
+    //Enable SMTP debugging
+    //SMTP::DEBUG_OFF = off (for production use)
+    //SMTP::DEBUG_CLIENT = client messages
+    //SMTP::DEBUG_SERVER = client and server messages
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
-    </head>
-    <body>
+    //Set the hostname of the mail server
+    $mail->Host = 'smtp.gmail.com';
+    //Use `$mail->Host = gethostbyname('smtp.gmail.com');`
+    //if your network does not support SMTP over IPv6,
+    //though this may cause issues with TLS
 
-        <div style="width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
-            <h1>Hemos Recibido una solicitud de registración para nuestro evento masivo.</h1>
+    //Set the SMTP port number:
+    $mail->Port = 465;
 
-            <div align="left" >
-                <p>Le damos la biendivenida : <strong>' . $user['email'] . '</strong>.</p>
-                <p><strong>El siguiente codigo le sera requerido para acceder mas actividades durante la jornada: </strong></p>
-                <br>
-                <p><strong>' . $user['code_verif'] . '</strong></p>
-                <br>
-                <p><strong>Muchas Gracias por su asistencia ..</strong>.</p>
-            </div>
+    //Set the encryption mechanism to use:
+    // - SMTPS (implicit TLS on port 465) or
+    // - STARTTLS (explicit TLS on port 587)
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
-          </div>
+    //Whether to use SMTP authentication
+    $mail->SMTPAuth = true;
 
-    </body>
+    //Username to use for SMTP authentication - use full email address for gmail
+    $mail->Username = $email;
 
-</html>
-';
+    //Password to use for SMTP authentication
+    $mail->Password = $clave;
 
-//TODO obtener las credenciales del .env
-/**
- * Consigue las credenciales para poder enviar un Mail.
- * Pasa por Parametros los datos necesearios para enviar el mismo.
- */
-if (file_exists($configuracion)) {
+    //Set who the message is to be sent from
+    //Note that with gmail you can only use your account address (same as `Username`)
+    //or predefined aliases that you have configured within your account.
+    //Do not use user-submitted addresses in here
+    $mail->setFrom($email, 'LibConstruct');
 
-  $archivo = fopen($configuracion,'r') or die("no puedo abrir archivo de datos");
+    //Set an alternative reply-to address
+    //This is a good place to put user-submitted addresses
+    $mail->addReplyTo($contacto['email'], $contacto['nombre']);
 
-  while(!feof($archivo)) {
+    //Set who the message is to be sent to
+    $mail->addAddress($contacto['email'], $contacto['nombre']);
 
-      $linea = fgets($archivo);
-      $line = str_replace("\n", "", $line);
-      $datos = explode("|", $linea);
-      $desde = $datos[0];
-      $credencial = $datos[1];
+    //Set the subject line
+    $mail->Subject = $asuntoMail;
 
-  } 
-  
-  $envio = enviarMail($user['email'], $contenido, $asuntoMail, $adjunto = '', $desde, $credencial);
-  
-  if ($envio !== TRUE) {
-    echo $envio;
+    //Read an HTML message body from an external file, convert referenced images to embedded,
+    //convert HTML into a basic plain-text alternative body
+    $mail->msgHTML($mensaje);
+
+    //Replace the plain text body with one created manually
+    $mail->AltBody = 'Si visualiza esto por favor desestime el mensaje';
+
+    //send the message, check for errors
+    if (!$mail->send()) {
+        //echo 'Mailer Error: ' . $mail->ErrorInfo;
+        return false;
+    } else {
+        //echo 'Message sent!';
+        return true;
+    }
   }
-
-} else {
-
-  echo "Error al intentar enviar correo";
-
-}
-
-//TODO Verficar codigo del final
 
 ?>

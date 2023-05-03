@@ -149,17 +149,10 @@ if (isset($_SESSION['mensaje'])) {
 
       <!-- Inicio seccion ofertas y materiales -->
       <section>
-        <div class="w3-black" id="tour">
+        <div class="w3-grey" id="tour">
           <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-            <h2 class="w3-wide w3-center">OFERTAS!</h2>
+            <h1 class="w3-wide w3-center">OFERTAS!</h1>
             <p class="w3-opacity w3-center"><i>Sólo mes de abril!</i></p><br>
-
-            <ul class="w3-ul w3-border w3-white w3-text-grey">
-              <li class="w3-padding">Baños<span class="w3-tag w3-red w3-margin-left">Merlo</span></li>
-              <li class="w3-padding">Ladrillos<span class="w3-tag w3-red w3-margin-left">Haedo</span></li>
-              <li class="w3-padding">Cerámicas<span class="w3-tag w3-red w3-margin-left">Ramos Mejia</span></li>
-            </ul>
-
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
               <div class="w3-third w3-margin-bottom">
                 <img src="img/baño_muestra.jpg" alt="Baño" style="width: 245px; height: 200px "
@@ -185,6 +178,27 @@ if (isset($_SESSION['mensaje'])) {
                   <p>Cerámica Vintage Marrakech Azul 37.5x75 2° Alberdi<br>$2954 m cuadrado</br></p>
                 </div>
               </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="img/kit-jardineria.jpg" alt="kit" style="width: 245px; height: 200px" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>Kit jardineria</b></p>
+                  <p>Kit Combo De Jardineria Palas Construccion Jardin Metali<br>$10000</br></p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="img/bolsa.jpg" alt="Cemento" style="width: 245px; height: 200px" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>Cemento</b></p>
+                  <p>Bolsa Cemento Avellaneda X 50 Kg<br>$2649</br></p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="img/carretilla.jpg" alt="Carretilla" style="width: 245px; height: 200px" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>Carretilla</b></p>
+                  <p>Carretilla Rueda De Goma 75 L.<br>$23525</br></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -200,7 +214,7 @@ if (isset($_SESSION['mensaje'])) {
           <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
               <i class="fa fa-map-marker" style="width:30px"></i> Dirección: Calle Zapiola 1420, Libertad Merlo.<br>
-              <i style="padding-top: 15px; width:30px" class="fa fa-phone"></i> Telefono fijo:(0220)-4978867<br>
+              <i style="padding-top: 15px;" class="fa fa-phone" style="width:30px"></i> Telefono fijo:(0220)-4978867<br>
               <i class="fa-sharp fa-solid fa-mobile" style="width:30px"></i> Celular: (011) 76888890<br>
               <i class="fa fa-envelope" style="width:30px"> </i> Email: lib_construct@gmail.com<br>
             </div>
@@ -224,8 +238,12 @@ if (isset($_SESSION['mensaje'])) {
                     <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
                   </div>
                 </div>
-                <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="mensaje">
-                <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
+                <div class="w3-half">
+                  <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
+                </div>
+              </div>
+              <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="mensaje">
+              <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
               </form>
             </div>
           </div>

@@ -21,12 +21,10 @@ if (isset($_SESSION['mensaje'])) {
 
   <link rel="icon" href="favicon.ico">
 
-  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
-
   <!-- Styles .CSS -->
-  <link rel="stylesheet" href="css/styles2.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles2.css">
+  <link rel="stylesheet" href="css/styles_carrousel.css">
   <link rel="stylesheet" href="css/tipografia.css">
 
   <title>LibConstruct</title>
@@ -34,12 +32,14 @@ if (isset($_SESSION['mensaje'])) {
 
 <body>
 
+  <!-- Muestreo de mensajes emergentes -->
   <!-- Mostrar mensajes emergentes utilizando PHP y JS -->
   <?php if (!empty($mensaje)): ?>
     <script>
       alert("<?php echo $mensaje; ?>");
     </script>
   <?php endif; ?>
+  <!-- Fin muestreo de mensajes emergentes -->
 
   <!-- Inicio Navbar -->
   <nav>
@@ -89,25 +89,22 @@ if (isset($_SESSION['mensaje'])) {
 
       <!-- Inicio Carrousel/ Imagenes del mismo -->
       <section>
+        <div class="swiffy-slider">
+          <ul class="slider-container">
+            <li><img src="img/herramientas_construccion.jpg" style="max-width: 100%;height: auto;"></li>
+            <li><img src="img/horno_barro.jpg" style="max-width: 100%;height: auto;"></li>
+            <li><img src="img/pala_ladrillos.jpg" style="max-width: 100%;height: auto;"></li>
+          </ul>
 
-      <div class="swiffy-slider">
-    <ul class="slider-container">
-        <li><img src="img/herramientas_construccion.jpg" style="max-width: 100%;height: auto;"></li>
-        <li><img src="img/horno_barro.jpg" style="max-width: 100%;height: auto;"></li>
-        <li><img src="img/pala_ladrillos.jpg" style="max-width: 100%;height: auto;"></li>
-    </ul>
+          <button type="button" class="slider-nav"></button>
+          <button type="button" class="slider-nav slider-nav-next"></button>
 
-    <button type="button" class="slider-nav"></button>
-    <button type="button" class="slider-nav slider-nav-next"></button>
-
-    <div class="slider-indicators">
-        <button class="active"></button>
-        <button></button>
-        <button></button>
-    </div>
-</div>
-    
-
+          <div class="slider-indicators">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+          </div>
+        </div>
       </section>
       <!-- Cierre Carrousel/ Imagenes del mismo -->
 

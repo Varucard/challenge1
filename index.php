@@ -29,33 +29,25 @@ if (isset($_SESSION['mensaje'])) {
 
 <body>
 
-  <?php if (!empty($mensaje)): ?>
-    <script>
-      alert("<?php echo $mensaje; ?>");
-    </script>
-  <?php endif; ?>
-
   <!-- Inicio Navbar -->
   <nav>
       <div class="w3-top">
-
-        <div class="w3-bar w3-black w3-card">
-          
-          <!-- Logo del Cliente -->
-          <a class="w3-bar-item" href=""><img src="img/logo_fondo.png" alt="Logo de LibCostruct"  width="150px" height="100px"></a>
-      
+          <div class="w3-bar w3-black w3-card">
           <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
           <a href="#" class="w3-hover-orange w3-bar-item w3-button w3-padding-large">CASA</a>
           <a href="#band" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONSTRUCTORA</a>
           <a href="#tour" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">MATERIALES</a>
           <a href="#contact" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
           <div class="w3-dropdown-hover w3-hide-small">
-              <button class="w3-hover-orange w3-padding-large w3-button" title="More">MAS<i style="padding-left: 5px;" class="fa fa-caret-down"></i></button>     
+              <button class="w3-hover-orange w3-padding-large w3-button" title="More">MÁS<i style="padding-left: 5px;" class="fa fa-caret-down"></i></button>     
               <div class="w3-dropdown-content w3-bar-block w3-card-4">
               <a href="#" class="w3-hover-orange w3-bar-item w3-button">Mercaderia</a>
               <a href="#" class="w3-hover-orange w3-bar-item w3-button">Extras</a>
               </div>
           </div>
+
+          <!-- Logo del Cliente -->
+          <a href=""><img src="img/logo_fondo.png" alt="Logo de LibCostruct" style="margin-left:400px" width="250px" height="150px"></a>
 
           <a href="javascript:void(0)" class="w3-padding-large w3-hover-orange w3-hide-small w3-right"><i class="fa fa-search"></i></a>
           </div>
@@ -63,10 +55,10 @@ if (isset($_SESSION['mensaje'])) {
 
       <!-- Barra de navegación en pantallas pequeñas (elimine el atributo onclick si desea que la barra de navegación se muestre siempre sobre el contenido al hacer clic en los enlaces) -->
       <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-          <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
-          <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-          <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-          <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+          <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONSTRUCTORA</a>
+          <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MATERIALES</a>
+          <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACTO</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MÁS</a>
       </div>
   </nav>
   <!-- Cierre Navbar -->
@@ -125,17 +117,10 @@ if (isset($_SESSION['mensaje'])) {
 
       <!-- Inicio seccion ofertas y materiales -->
       <section>
-        <div class="w3-black" id="tour">
+        <div class="w3-grey" id="tour">
           <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-            <h2 class="w3-wide w3-center">OFERTAS!</h2>
+            <h1 class="w3-wide w3-center">OFERTAS!</h1>
             <p class="w3-opacity w3-center"><i>Sólo mes de abril!</i></p><br>
-
-            <ul class="w3-ul w3-border w3-white w3-text-grey">
-              <li class="w3-padding">Baños<span class="w3-tag w3-red w3-margin-left">Merlo</span></li>
-              <li class="w3-padding">Ladrillos<span class="w3-tag w3-red w3-margin-left">Haedo</span></li>
-              <li class="w3-padding">Cerámicas<span class="w3-tag w3-red w3-margin-left">Ramos Mejia</span></li>
-            </ul>
-
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
               <div class="w3-third w3-margin-bottom">
                 <img src="img/baño_muestra.jpg" alt="Baño" style="width: 245px; height: 200px "  class="w3-hover-opacity">
@@ -158,6 +143,27 @@ if (isset($_SESSION['mensaje'])) {
                   <p>Cerámica Vintage Marrakech Azul 37.5x75 2° Alberdi<br>$2954 m cuadrado</br></p>
                 </div>
               </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="img/kit-jardineria.jpg" alt="kit" style="width: 245px; height: 200px" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>Kit jardineria</b></p>
+                  <p>Kit Combo De Jardineria Palas Construccion Jardin Metali<br>$10000</br></p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="img/bolsa.jpg" alt="Cemento" style="width: 245px; height: 200px" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>Cemento</b></p>
+                  <p>Bolsa Cemento Avellaneda X 50 Kg<br>$2649</br></p>
+                </div>
+              </div>
+              <div class="w3-third w3-margin-bottom">
+                <img src="img/carretilla.jpg" alt="Carretilla" style="width: 245px; height: 200px" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+                  <p><b>Carretilla</b></p>
+                  <p>Carretilla Rueda De Goma 75 L.<br>$23525</br></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -173,31 +179,31 @@ if (isset($_SESSION['mensaje'])) {
           <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
               <i class="fa fa-map-marker" style="width:30px"></i> Dirección: Calle Zapiola 1420, Libertad Merlo.<br>
-              <i style="padding-top: 15px; width:30px" class="fa fa-phone"></i> Telefono fijo:(0220)-4978867<br>
+              <i style="padding-top: 15px;" class="fa fa-phone" style="width:30px"></i> Telefono fijo:(0220)-4978867<br>
               <i class="fa-sharp fa-solid fa-mobile" style="width:30px"></i> Celular: (011) 76888890<br>
               <i class="fa fa-envelope" style="width:30px"> </i> Email: lib_construct@gmail.com<br>
             </div>
             <div class="w3-col m6">
-              <form action="./php/back_libConstruct.php" method="POST">
-                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                  <div class="w3-half">
-                    <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
-                  </div>
-                  <div class="w3-half">
-                    <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
-                    <option value="PERSONA">Persona</option>
-                    <option value="EMPRESA">Empresa</option>
-                    </select>
-                  </div>
-                  <div class="w3-half">
-                    <input class="w3-input w3-border" type="tel" placeholder="Telefono" required name="telefono">
-                  </div>
-                  <div class="w3-half">
-                    <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
-                  </div>
+              <form action="/send_email.php" target="_blank">
+              <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                  <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
                 </div>
-                <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="mensaje">
-                <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
+                <div class="w3-half">
+                  <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
+                  <option value="persona">Persona</option>
+                  <option value="empresa">Empresa</option>
+                  </select>
+                </div>
+                <div class="w3-half">
+                  <input class="w3-input w3-border" type="tel" placeholder="Telefono" required name="telefono">
+                </div>
+                <div class="w3-half">
+                  <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
+                </div>
+              </div>
+              <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="mensaje">
+              <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
               </form>
             </div>
           </div>

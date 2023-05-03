@@ -3,7 +3,7 @@
   session_start();
 
   require_once './send_email.php';
-  require_once './functiones.php';
+  require_once './functions.php';
 
   /*--------- Variables ------------*/
 
@@ -14,7 +14,7 @@
   $mostrarMensaje = true;
   $_SESSION['mensaje'] = '';
 
-  // Extrare las variables del .env
+  // Extraer las variables de entorno
   $email = getenv('USER_EMAIL');
   $password_email = getenv('PASSWORD_EMAIL');
 
@@ -69,21 +69,3 @@
   }
 
 ?>
-
-
-<script>
-
-/*
-  // Redirigir de nuevo a la pagina
-  window.location.href = "http://localhost/challenge1/"
-
-  // verificar si se debe mostrar el mensaje emergente
-  let mostrarMensaje = "<?php // echo $mostrarMensaje; ?>";
-
-  // si se debe mostrar el mensaje emergente, mostrarlo
-  if (mostrarMensaje) {
-    alert("<?php //echo $mensaje; ?>");
-  }
-*/
-
-</script>

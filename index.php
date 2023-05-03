@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Trabajo con variables de sesión para mostrar mensajes en la pagina
 // Verificar si hay un mensaje en la sesión
 if (isset($_SESSION['mensaje'])) {
   $mensaje = $_SESSION['mensaje'];
@@ -29,6 +30,7 @@ if (isset($_SESSION['mensaje'])) {
 
 <body>
 
+  <!-- Mostrar mensajes emergentes utilizando PHP y JS -->
   <?php if (!empty($mensaje)): ?>
     <script>
       alert("<?php echo $mensaje; ?>");

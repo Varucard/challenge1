@@ -21,8 +21,6 @@
     --texto-subrayado:underline;
     --texto-subrayado-punteado:underline dotted;
 
-
-
     /**FUENTES PARA APLICAR A TODOS LOS H1..H2**/
     --fuentes-monospace:monospace;
     --fuentes-fantasy:fantasy;
@@ -30,8 +28,6 @@
     --fuentes-sans-serif:sans-serif;
     --fuentes-arial:arial;
     --fuentes-cursive:cursive;
-
-
 }
 html{
     box-sizing:border-box
@@ -1090,7 +1086,7 @@ a{
     padding:8px 16px!important
 }
 .w3-padding-large{
-    padding:50px 24px!important
+    padding:22px 24px!important
 }
  .w3-padding-16{
     padding-top:16px!important;

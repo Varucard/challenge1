@@ -46,13 +46,12 @@ if (isset($_SESSION['mensaje'])) {
     <div class="w3-top">
 
       <!-- Logo del Cliente -->
-      <!-- <a class="w3-bar-item w3-padding-large" href=""><img src="img/logo_fondo.png" alt="Logo de LibCostruct" width="150px"
-            height="100px"></a> -->
+      <!-- <a class="w3-bar-item w3-padding-large" href=""></a> -->
 
       <div class="w3-bar w3-black w3-card">
         
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="#" class="w3-hover-orange w3-bar-item w3-button w3-padding-large">CASA</a>
+        <a href="#" class="w3-hover-orange w3-bar-item w3-button"><img src="img/logo_fondo.png" alt="Logo de LibCostruct" width="75px" height="50px"></a>
         <a href="#constructora" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONSTRUCTORA</a>
         <a href="#materiales" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">MATERIALES</a>
         <a href="#contacto" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
@@ -71,7 +70,7 @@ if (isset($_SESSION['mensaje'])) {
     </div>
 
     <!-- Barra de navegación en pantallas pequeñas (elimine el atributo onclick si desea que la barra de navegación se muestre siempre sobre el contenido al hacer clic en los enlaces) -->
-    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:60px">
       <a href="#constructora" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONSTRUCTORA</a>
       <a href="#materiales" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MATERIALES</a>
       <a href="#contacto" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACTO</a>

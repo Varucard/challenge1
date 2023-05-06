@@ -44,28 +44,20 @@ if (isset($_SESSION['mensaje'])) {
   <!-- Inicio Navbar -->
   <nav>
     <div class="w3-top">
-
-      <!-- Logo del Cliente -->
-      <!-- <a class="w3-bar-item w3-padding-large" href=""></a> -->
-
       <div class="w3-bar w3-black w3-card">
-        
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="#" class="w3-hover-orange w3-bar-item w3-button"><img src="img/logo_fondo.png" alt="Logo de LibCostruct" width="75px" height="50px"></a>
         <a href="#constructora" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONSTRUCTORA</a>
         <a href="#materiales" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">MATERIALES</a>
         <a href="#contacto" class="w3-hover-orange w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACTO</a>
         <div class="w3-dropdown-hover w3-hide-small">
-          <button class="w3-hover-orange w3-padding-large w3-button" title="More">MAS<i style="padding-left: 5px;"
-              class="fa fa-caret-down"></i></button>
+          <button class="w3-hover-orange w3-padding-large w3-button" title="More">MAS<i style="padding-left: 5px;" class="fa fa-caret-down"></i></button>
           <div class="w3-dropdown-content w3-bar-block w3-card-4">
             <a href="#" class="w3-hover-orange w3-bar-item w3-button">MERCADERIA</a>
             <a href="#" class="w3-hover-orange w3-bar-item w3-button">EXTRAS</a>
           </div>
         </div>
-
-        <a href="javascript:void(0)" class="w3-padding-large w3-hover-orange w3-hide-small w3-right"><i
-            class="fa fa-search"></i></a>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-orange w3-hide-small w3-right"><i class="fa fa-search"></i></a>
       </div>
     </div>
 
@@ -126,18 +118,15 @@ if (isset($_SESSION['mensaje'])) {
           <div class="w3-row w3-padding-32">
             <div class="w3-third">
               <p>Sucursal Merlo</p>
-              <img src="img/sucursal_merlo.jpg" class="w3-round w3-margin-bottom" style="width:150px; height: 150px;"
-                alt="Sucursal Merlo">
+              <img src="img/sucursal_merlo.jpg" class="w3-round w3-margin-bottom" style="width:150px; height: 150px;" alt="Sucursal Merlo">
             </div>
             <div class="w3-third">
               <p>Sucursal Ramos Mejia</p>
-              <img src="img/sucursal_ramos_mejia.jpg" class="w3-round w3-margin-bottom"
-                style="width:150px; height: 150px;" alt="Sucursal Ramos Mejia">
+              <img src="img/sucursal_ramos_mejia.jpg" class="w3-round w3-margin-bottom" style="width:150px; height: 150px;" alt="Sucursal Ramos Mejia">
             </div>
             <div class="w3-third">
               <p>Sucursal Haedo</p>
-              <img src="img/sucursal_haedo.jpg" class="w3-round" style="width:150px; height: 150px;"
-                alt="Sucursal Haedo">
+              <img src="img/sucursal_haedo.jpg" class="w3-round" style="width:150px; height: 150px;" alt="Sucursal Haedo">
             </div>
           </div>
         </div>
@@ -153,38 +142,35 @@ if (isset($_SESSION['mensaje'])) {
             <p class="w3-opacity w3-center"><i>Sólo mes de abril!</i></p><br>
             <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
               <div class="w3-third w3-margin-bottom">
-                <img src="img/baño_muestra.jpg" alt="Baño" style="width:100%"
-                  class="w3-hover-opacity">
+                <img src="img/baño.jpg" alt="Baño" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
                   <p><b>Baño</b></p>
                   <p>Combo ferrum andina inodoro y deposito dual<br>$73900</br></p>
                 </div>
               </div>
               <div class="w3-third w3-margin-bottom">
-                <img src="img/ladrillos.jpg" alt="Ladrillos" style="width:100%"
-                  class="w3-hover-opacity">
+                <img src="img/ladrillos.jpg" alt="Ladrillos" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
                   <p><b>Ladrillos</b></p>
                   <p>Ladrillo Comun Merlino 25x5x12cm<br>$32.02 c/u</br></p>
                 </div>
               </div>
               <div class="w3-third w3-margin-bottom">
-                <img src="img/ceramica_tiakiki.jpg" alt="Ceramica" style="width:100%"
-                  class="w3-hover-opacity">
+                <img src="img/ceramica_tia_kiki.jpg" alt="Ceramica" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
                   <p><b>Ceramica</b></p>
                   <p>Cerámica Vintage Marrakech Azul 37.5x75 2° Alberdi<br>$2954 m cuadrado</br></p>
                 </div>
               </div>
               <div class="w3-third w3-margin-bottom">
-                <img src="img/kit-jardineria.jpg" alt="kit" style="width:100%" class="w3-hover-opacity">
+                <img src="img/pala.jpg" alt="kit" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
                   <p><b>Kit jardineria</b></p>
                   <p>Kit Combo De Jardineria Palas Construccion Jardin Metali<br>$10000</br></p>
                 </div>
               </div>
               <div class="w3-third w3-margin-bottom">
-                <img src="img/bolsa.jpg" alt="Cemento" style="width:100%" class="w3-hover-opacity">
+                <img src="img/bolsa_cemento.jpg" alt="Cemento" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
                   <p><b>Cemento</b></p>
                   <p>Bolsa Cemento Avellaneda X 50 Kg<br>$2649</br></p>
@@ -194,7 +180,7 @@ if (isset($_SESSION['mensaje'])) {
                 <img src="img/carretilla.jpg" alt="Carretilla" style="width:100%" class="w3-hover-opacity">
                 <div class="w3-container w3-white">
                   <p><b>Carretilla</b></p>
-                  <p>Carretilla Rueda De Goma 75 L.<br>$23525</br></p>
+                  <p>Carretilla Rueda De Goma 75 Litros.<br>$23525</br></p>
                 </div>
               </div>
             </div>
@@ -223,8 +209,7 @@ if (isset($_SESSION['mensaje'])) {
                     <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
                   </div>
                   <div class="w3-half">
-                    <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required
-                      name="consultor">
+                    <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
                       <option value="PERSONA">Persona</option>
                       <option value="EMPRESA">Empresa</option>
                     </select>
@@ -263,6 +248,7 @@ if (isset($_SESSION['mensaje'])) {
 
     <!-- Inicio sección inferior footer -->
     <div class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+      <img src="img/logo_fondo.png" alt="Logo de LibCostruct" width="150px" height="100px" style="margin-right:15px">
       <i class="fa fa-facebook-official w3-hover-opacity"></i>
       <i class="fa fa-instagram w3-hover-opacity"></i>
       <i class="fa fa-twitter w3-hover-opacity"></i>

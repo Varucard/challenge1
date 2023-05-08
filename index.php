@@ -199,6 +199,8 @@ if (isset($_SESSION['mensaje'])) {
             <div class="w3-col m6 w3-large w3-margin-bottom">
               <i class="fa fa-map-marker" style="width:30px"></i> Dirección: Calle Zapiola 1420, Libertad Merlo.<br>
               <i style="padding-top: 15px; width:30px" class="fa fa-phone"></i> Telefono fijo:(0220)-4978867<br>
+              <a href="https://wa.me/1176888890?text=Hola! Me interesa su producto." target="_blank"><i style="padding-top: 10px; width:30px" class="fa fa-whatsapp w3-hover-opacity"></i></a>Whatsapp<br>
+              <a href="https://mail.google.com"><i class="fa fa-envelope" style="width:30px"></i></a> Email: lib_construct@gmail.com<br>
               <i class="fa-sharp fa-solid fa-mobile" style="width:30px"></i> Celular: (011) 76888890<br>
               <i class="fa fa-envelope" style="width:30px"> </i> Email: lib_construct@gmail.com<br>
             </div>
@@ -249,6 +251,9 @@ if (isset($_SESSION['mensaje'])) {
     <!-- Inicio sección inferior footer -->
     <div class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
       <img src="img/logo_fondo.png" alt="Logo de LibCostruct" width="150px" height="100px" style="margin-right:15px">
+      <a href="https://www.facebook.com/libconstrucciones" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+      <a href="https://www.instagram.com/libconstrucciones" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="https://twitter.com/libconstrucciones" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
       <i class="fa fa-facebook-official w3-hover-opacity"></i>
       <i class="fa fa-instagram w3-hover-opacity"></i>
       <i class="fa fa-twitter w3-hover-opacity"></i>

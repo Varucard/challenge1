@@ -172,32 +172,32 @@ if (isset($_SESSION['mensaje'])) {
 
       <!-- Inicio seccion Formulario de contacto -->
       <section>
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contacto">
           <h2 class="w3-wide w3-center">CONTACTO</h2>
           <p class="w3-opacity w3-center"><i>Necesitas construir?</i></p>
           <p class="w3-opacity w3-center"><i>Contactanos</i></p>
           <div class="w3-row w3-padding-32">
             <div class="w3-col m6 w3-large w3-margin-bottom">
               <i class="fa fa-map-marker" style="width:30px"></i> Dirección: Calle Zapiola 1420, Libertad Merlo.<br>
-              <i style="padding-top: 15px;" class="fa fa-phone" style="width:30px"></i> Telefono fijo:(0220)-4978867<br>
-              <i class="fa-sharp fa-solid fa-mobile" style="width:30px"></i> Celular: (011) 76888890<br>
-              <i class="fa fa-envelope" style="width:30px"> </i> Email: lib_construct@gmail.com<br>
+              <i style="padding-top: 15px; width:30px" class="fa fa-phone"></i> Telefono fijo:(0220)-4978867<br>
+              <a href="https://wa.me/1176888890?text=Hola! Me interesa su producto." target="_blank"><i style="padding-top: 10px; width:30px" class="fa fa-whatsapp w3-hover-opacity"></i></a>Whatsapp<br>
+              <a href="https://mail.google.com"><i class="fa fa-envelope" style="width:30px"></i></a> Email: lib_construct@gmail.com<br>
             </div>
             <div class="w3-col m6">
-              <form action="/send_email.php" target="_blank">
-              <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                <div class="w3-half">
-                  <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
-                </div>
-                <div class="w3-half">
-                  <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
-                  <option value="persona">Persona</option>
-                  <option value="empresa">Empresa</option>
-                  </select>
-                </div>
-                <div class="w3-half">
-                  <input class="w3-input w3-border" type="tel" placeholder="Telefono" required name="telefono">
-                </div>
+              <form action="./php/back_libConstruct.php" method="POST">
+                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                  <div class="w3-half">
+                    <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="nombre">
+                  </div>
+                  <div class="w3-half">
+                    <select style="margin-bottom: 25px;" class="w3-input w3-border w3-hover-orange w3-opacity" required name="consultor">
+                      <option value="PERSONA">Persona</option>
+                      <option value="EMPRESA">Empresa</option>
+                    </select>
+                  </div>
+                  <div class="w3-half">
+                    <input class="w3-input w3-border" type="tel" placeholder="Telefono" required name="telefono">
+                  </div>
                 <div class="w3-half">
                   <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
                 </div>
@@ -207,7 +207,7 @@ if (isset($_SESSION['mensaje'])) {
               </form>
             </div>
           </div>
-        </div>        
+        </div>
       </section>
       <!-- Cierre Seccion Formulario de contacto -->
 
@@ -229,21 +229,26 @@ if (isset($_SESSION['mensaje'])) {
 
     <!-- Inicio sección inferior footer -->
     <div class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <img src="img/logo_fondo.png" alt="Logo de LibCostruct" width="150px" height="100px" style="margin-right:15px">
+      <a href="https://www.facebook.com/libconstrucciones" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+      <a href="https://www.instagram.com/libconstrucciones" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="https://twitter.com/libconstrucciones" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
       <p class="w3-medium">LibConstruct</p>
     </div>
-    
+
   </footer>
   <!-- Cierre de Footer -->
-    
+
   <!-- JavaScript -->
   <!-- Permite la utilización de Iconos dentro de la pagina -->
   <script src="js/icons.js" crossorigin="anonymous"></script>
 
   <!-- ARCHIVO JAVASCRIPT QUE ENLAZA LA LOGICA PARA EL CARROUSEL -->
   <script src="js/carrousel.js" crosorigin="anonymous"></script>
+  <script src="js/slider.js" crosorigin="anonymous"></script>
+
+  <!-- Codigo para la barra de navegación -->
+  <script src="js/navbar.js" crosorigin="anonymous"></script>
 
 </body>
 

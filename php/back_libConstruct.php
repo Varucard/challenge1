@@ -9,6 +9,10 @@
   $asuntoMail = 'Consulta por asesoramiento profesional';
   $adjunto = '';
   $consultor = ['PERSONA', 'EMPRESA'];
+
+  // Datos a donde se enviara la data de los solicitantes
+  $datosCliente = ['email' => 'arielmolus25@gmail.com', 'nombre' => 'LibConstruct'];
+
   // variable que indica si se debe mostrar el mensaje emergente
   $mostrarMensaje = true;
   $_SESSION['mensaje'] = '';
@@ -30,6 +34,9 @@
   require_once './views/barrel.php';
 
   if (enviarMail($contacto, $email, $password_email, $mensajeConsulta, $asuntoMail, $adjunto)) {
+
+    // Envio el Email con la Data al Cliente para el contacto
+    enviarMail($datosCliente, $email, $password_email, $mensajeAsesor, $asuntoMail, $adjunto);
 
     $_SESSION['mensaje'] = '¡Mensaje enviado correctamente! A la brevedad nos comunicaremos con usted';
     header('Location: ../index.php');

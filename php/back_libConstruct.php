@@ -6,7 +6,6 @@
   require_once './functions.php';
 
   /*--------- Variables ------------*/
-
   $asuntoMail = 'Consulta por asesoramiento profesional';
   $adjunto = '';
   $consultor = ['PERSONA', 'EMPRESA'];
@@ -27,34 +26,10 @@
     'mensaje' => strtoupper(checkInputText('mensaje')),
   ];
 
-  $mensaje = '
-  <html>
-      <head>
+  // Invoco a las vistas una vez obtenido los valores
+  require_once './views/barrel.php';
 
-          <meta charset="UTF-8">
-          <title></title>
-
-      </head>
-      <body>
-
-        <div style="width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
-          <h1>Hemos Recibido una solicitud para comunicarnos con usted: ' . $contacto['nombre'] . '</h1>
-
-          <div align="left" >
-            <p>LibConstruct lo saluda y le agradece que se interese por nuestros servicios</p>
-            <p>A la brevedad uno de nuestro asesores se estara comunicando con usted a: <strong>' . $contacto['email'] . '</strong> para responder su duda.</p>
-            <br>
-            <p><strong>Muchas Gracias por la confianza!</strong>.</p>
-          </div>
-
-          </div>
-
-      </body>
-
-  </html>
-  ';
-
-  if (enviarMail($contacto, $email, $password_email, $mensaje, $asuntoMail, $adjunto)) {
+  if (enviarMail($contacto, $email, $password_email, $mensajeConsulta, $asuntoMail, $adjunto)) {
 
     $_SESSION['mensaje'] = '¡Mensaje enviado correctamente! A la brevedad nos comunicaremos con usted';
     header('Location: ../index.php');

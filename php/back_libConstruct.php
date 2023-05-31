@@ -6,10 +6,13 @@
   require_once './functions.php';
 
   /*--------- Variables ------------*/
-
   $asuntoMail = 'Consulta por asesoramiento profesional';
   $adjunto = '';
   $consultor = ['PERSONA', 'EMPRESA'];
+
+  // Datos a donde se enviara la data de los solicitantes
+  $datosCliente = ['email' => 'arielmolus25@gmail.com', 'nombre' => 'LibConstruct'];
+
   // variable que indica si se debe mostrar el mensaje emergente
   $mostrarMensaje = true;
   $_SESSION['mensaje'] = '';
@@ -20,41 +23,29 @@
 
   // Variables por POST
   $contacto = [
-    'nombre' => strtoupper(checkInputText('nombre', '/^[a-z\' ]+$/ui')),
-    'consultor' => strtoupper(checkInputSelect('consultor', $consultor)),
-    'telefono' => intval(checkInputText('telefono', '/^([0-9])*$/')),
+    'nombre' => checkInputText('nombre', '/^[a-z\' ]+$/ui'),
+    'consultor' => checkInputSelect('consultor', $consultor),
+    'telefono' => checkInputText('telefono', '/^(?:\+?\d{1,3}\s?)?(?:\(?0?\d{2,3}\)?[\s.-]?)?\d{7,10}$/'),
     'email' => checkInputEmail('email'),
-    'mensaje' => strtoupper(checkInputText('mensaje')),
+    'mensaje' => checkInputText('mensaje'),
   ];
 
-  $mensaje = '
-  <html>
-      <head>
+  // Verifico que lo contenido dentro de Contacto no sea falso, si es falso arrojo un error al Usuario
+  foreach($contacto as $dato) {
+    if ($dato === false) {
+      $_SESSION['mensaje'] = 'Se detectaron valores extraños ingresados, por favor no haga cosas raras';
+      header('Location: ../index.php#contacto');
+      exit;
+    }
+  }
 
-          <meta charset="UTF-8">
-          <title></title>
+  // Invoco a las vistas una vez obtenido los valores
+  require_once './views/barrel.php';
 
-      </head>
-      <body>
+  if (enviarMail($contacto, $email, $password_email, $mensajeConsulta, $asuntoMail, $adjunto)) {
 
-        <div style="width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
-          <h1>Hemos Recibido una solicitud para comunicarnos con usted: ' . $contacto['nombre'] . '</h1>
-
-          <div align="left" >
-            <p>LibConstruct lo saluda y le agradece que se interese por nuestros servicios</p>
-            <p>A la brevedad uno de nuestro asesores se estara comunicando con usted a: <strong>' . $contacto['email'] . '</strong> para responder su duda.</p>
-            <br>
-            <p><strong>Muchas Gracias por la confianza!</strong>.</p>
-          </div>
-
-          </div>
-
-      </body>
-
-  </html>
-  ';
-
-  if (enviarMail($contacto, $email, $password_email, $mensaje, $asuntoMail, $adjunto)) {
+    // Envio el Email con la Data al Cliente para el contacto
+    enviarMail($datosCliente, $email, $password_email, $mensajeAsesor, $asuntoMail, $adjunto);
 
     $_SESSION['mensaje'] = '¡Mensaje enviado correctamente! A la brevedad nos comunicaremos con usted';
     header('Location: ../index.php');
@@ -63,7 +54,7 @@
   } else {
 
     $_SESSION['mensaje'] = '¡Ocurrio un error, por favor vuelva a intentarlo!';
-    header('Location: ../index.php#contact');
+    header('Location: ../index.php#contacto');
     exit;
 
   }

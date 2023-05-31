@@ -23,12 +23,21 @@
 
   // Variables por POST
   $contacto = [
-    'nombre' => strtoupper(checkInputText('nombre', '/^[a-z\' ]+$/ui')),
-    'consultor' => strtoupper(checkInputSelect('consultor', $consultor)),
-    'telefono' => intval(checkInputText('telefono', '/^([0-9])*$/')),
+    'nombre' => checkInputText('nombre', '/^[a-z\' ]+$/ui'),
+    'consultor' => checkInputSelect('consultor', $consultor),
+    'telefono' => checkInputText('telefono', '/^(?:\+?\d{1,3}\s?)?(?:\(?0?\d{2,3}\)?[\s.-]?)?\d{7,10}$/'),
     'email' => checkInputEmail('email'),
-    'mensaje' => strtoupper(checkInputText('mensaje')),
+    'mensaje' => checkInputText('mensaje'),
   ];
+
+  // Verifico que lo contenido dentro de Contacto no sea falso, si es falso arrojo un error al Usuario
+  foreach($contacto as $dato) {
+    if ($dato === false) {
+      $_SESSION['mensaje'] = 'Se detectaron valores extraños ingresados, por favor no haga cosas raras';
+      header('Location: ../index.php#contacto');
+      exit;
+    }
+  }
 
   // Invoco a las vistas una vez obtenido los valores
   require_once './views/barrel.php';
@@ -45,7 +54,7 @@
   } else {
 
     $_SESSION['mensaje'] = '¡Ocurrio un error, por favor vuelva a intentarlo!';
-    header('Location: ../index.php#contact');
+    header('Location: ../index.php#contacto');
     exit;
 
   }
